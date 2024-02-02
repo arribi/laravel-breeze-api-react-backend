@@ -16,11 +16,11 @@ return [
     */
 
     'paths' => [
-        '/api/*',
+        'api/*',
         'sanctum/csrf-cookie',
-        '/login',
-        '/register',
-        '/logout',
+        'login',
+        'register',
+        'logout',
         'forgot-password',
         'reset-password',
         'verify-email',
