@@ -17,4 +17,9 @@ Route::get('/', function () {
     return ['Laravel' => app()->version()];
 });
 
-require __DIR__ . '/auth.php';
+use Laravel\Sanctum\Http\Middleware\EnsureFrontendRequestsAreStateful;
+
+Route::middleware(['auth:sanctum', EnsureFrontendRequestsAreStateful::class])->group(function () {
+    // Your API routes
+    require __DIR__ . '/auth.php';
+});
